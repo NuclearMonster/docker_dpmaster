@@ -1,0 +1,7 @@
+version: '2'
+services:
+  dpmaster:
+    image: timedoctor/dpmaster
+    restart: unless-stopped
+    ports:
+    - 27950:27950
