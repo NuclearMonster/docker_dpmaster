@@ -4,5 +4,4 @@ services:
     image: timedoctor/dpmaster
     restart: unless-stopped
     ports:
-    - "27950:27950"
-    network_mode: host
+    - "27950:27950/udp"
