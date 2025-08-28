@@ -1,4 +1,4 @@
-# dpmaster Docker image
+# mpdirectory Docker image
 
-Host your own dpmaster server. Find out more about the master server here: 
+Host your own multiplayer game directory server. Find out more about the directory server here under the name "dpmaster":
 http://icculus.org/twilight/darkplaces/download.html
