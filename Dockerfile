@@ -1,6 +1,6 @@
 FROM ubuntu:24.04
 
-RUN apt-get	update && apt-get install -y wget build-essential unzip \
+RUN apt-get	update && apt-get install -y wget build-essential git unzip \
 && mkdir -p /opt && mkdir -p /opt/bin && cd /tmp && git co https://github.com/ioquake/mpdirectory.git && cd /tmp/mpdirectory/src && make release \
 && mv /tmp/mpdirectory/src/mpdirectory /opt/bin/mpdirectory \
 && adduser --disabled-password --gecos "mpdirectory user" mpdirectory \
