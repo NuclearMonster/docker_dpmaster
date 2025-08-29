@@ -1,4 +1,3 @@
-version: '2'
 services:
   mpdirectory:
     image: mrnuclearmonster/mpdirectory_docker
