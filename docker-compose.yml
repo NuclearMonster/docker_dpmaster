@@ -1,7 +1,7 @@
 version: '2'
 services:
-  dpmaster:
-    image: timedoctor/dpmaster
+  mpdirectory:
+    image: mrnuclearmonster/mpdirectory_docker
     restart: unless-stopped
     ports:
     - "27950:27950/udp"
