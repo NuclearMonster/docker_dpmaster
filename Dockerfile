@@ -15,4 +15,4 @@ EXPOSE 27950/udp
 
 USER mpdirectory
 
-CMD /opt/bin/mpdirectory -f
+CMD ["/opt/bin/mpdirectory", "-f"]
