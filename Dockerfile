@@ -1,19 +1,18 @@
 FROM ubuntu:24.04
 
 RUN apt-get	update && apt-get install -y wget build-essential unzip \
-&& mkdir -p /opt && cd /opt && wget http://icculus.org/twilight/darkplaces/files/dpmaster-2.2.zip && unzip dpmaster-2.2.zip && cd /opt/dpmaster-2.2/src && make release \
-&& mv /opt/dpmaster-2.2/src/dpmaster /opt/ \
-&& adduser --disabled-password --gecos "dpmaster user" dpmaster \
-&& apt-get purge -y wget build-essential unzip \
+&& mkdir -p /opt && mkdir -p /opt/bin && cd /tmp && git co https://github.com/ioquake/mpdirectory.git && cd /tmp/mpdirectory/src && make release \
+&& mv /tmp/mpdirectory/src/mpdirectory /opt/bin/mpdirectory \
+&& adduser --disabled-password --gecos "mpdirectory user" mpdirectory \
+&& apt-get purge -y build-essential unzip \
 && apt-get autoremove -y \
 && rm -rf /staging \
 && rm -rf /tmp/* /var/tmp/* \
 && rm -rf /var/lib/apt/lists/* \
-&& rm -rf /opt/dpmaster-2.2 \
-&& rm -f /opt/dpmaster-2.2.zip
+&& rm -rf /opt/mpdirectory
 
 EXPOSE 27950/udp
 
-USER dpmaster
+USER mpdirectory
 
-CMD /opt/dpmaster -f
+CMD /opt/bin/mpdirectory -f
